@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 07:59:40 by maboulho          #+#    #+#             */
-/*   Updated: 2023/02/16 14:25:03 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:35:15 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ Phonebook::Phonebook()
 
 Phonebook::~Phonebook()
 {
-	std::cout << "\ntqwdo" << std::endl;
+	std::cout << "\nbye" << std::endl;
 }
 
 int	isNumeric(std::string str)
@@ -207,8 +207,9 @@ void	Phonebook::search()
 	}
 	// input the contact index w qlb elih w checki wach dakhl f range 
 	std::string s;
+	std::cout << "enter an index for more infos" << std::endl;
 	getline(std::cin,s);
-	if( std::cin.eof() || isNumeric(s) != 1 || count < stoi(s) || s.empty())
+	if(s.size() == 0 || std::cin.eof() || isNumeric(s) != 1 || count < stoi(s) || s.empty() || stoi(s) == 0)
 		std::cout << "Oopsie no contact has been found\n";
 	else
 	{
