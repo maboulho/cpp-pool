@@ -1,14 +1,19 @@
-NAME = phonebook
+NAME = HI_THIS_IS_BRAIN
+
 CC = c++
+
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
 RM = rm -f
-SRC = main.cpp phonebook.cpp
+
+SRC = main.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

@@ -1,14 +1,19 @@
-NAME = phonebook
+NAME = Unnecessary_violence
+
 CC = c++
+
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
 RM = rm -f
-SRC = main.cpp phonebook.cpp
+
+SRC = main.cpp HumanA.cpp Weapon.cpp HumanB.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

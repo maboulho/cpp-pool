@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 07:59:40 by maboulho          #+#    #+#             */
-/*   Updated: 2023/02/18 00:35:15 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/02/28 22:32:22 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void   Contact::setfirstName()
 	if (!std::cin)
 		return ;
 	std::cout << "Enter first name : ";
-while (getline(std::cin,this->firstName))
+	while (getline(std::cin,this->firstName))
 	{
-		if(this->firstName.empty()) {
+		if(this->firstName.empty())
+		{
 			std::cout << "invalid argument\n";
 			std::cout << "Enter first name : ";
 		}
@@ -39,7 +40,8 @@ void   Contact::setlastName()
 	std::cout << "Enter last name : ";
 while (getline(std::cin,this->lastName))
 	{
-		if(this->lastName.empty()) {
+		if(this->lastName.empty())
+		{
 			std::cout << "invalid argument\n";
 			std::cout << "Enter last name : ";
 		}
@@ -80,7 +82,8 @@ void   Contact::setphoneNumber()
 	std::cout << "Enter phoneNumber : ";
 	while (getline(std::cin,this->phoneNumber))
 	{
-		if(this->phoneNumber.empty() || isNumeric(this->phoneNumber) != 1) {
+		if(this->phoneNumber.empty() || isNumeric(this->phoneNumber) != 1)
+		{
 			std::cout << "invalid argument\n";
 			std::cout << "Enter phoneNumber : ";
 		}
@@ -100,7 +103,8 @@ void   Contact::setdarkestSecret()
 	std::cout << "Enter darkestSecret : ";
 	while (getline(std::cin,this->darkestSecret))
 	{
-		if(this->darkestSecret.empty()) {
+		if(this->darkestSecret.empty())
+		{
 			std::cout << "invalid argument\n";
 			std::cout << "Enter darkestSecret : ";
 		}

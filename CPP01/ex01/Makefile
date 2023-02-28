@@ -1,14 +1,19 @@
-NAME = phonebook
+NAME = Moar_brainz
+
 CC = c++
+
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
 RM = rm -f
-SRC = main.cpp phonebook.cpp
+
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
