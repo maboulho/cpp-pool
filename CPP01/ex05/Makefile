@@ -1,4 +1,4 @@
-NAME = sed_is_for_losers
+NAME = Harl
 
 CC = c++
 
@@ -6,7 +6,7 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
