@@ -74,7 +74,6 @@ void   Contact::setNickname()
 			break ;
 	}
 }
-// check if the input is numeric
 void   Contact::setphoneNumber()
 {
 	if (!std::cin)
@@ -209,7 +208,6 @@ void	Phonebook::search()
 		str = (str.length() > 10)? str.substr(0, 9) + "." : str;
 		std::cout << "|" << std::setw(10) << str << "|" << std::endl;
 	}
-	// input the contact index w qlb elih w checki wach dakhl f range 
 	std::string s;
 	std::cout << "enter an index for more infos" << std::endl;
 	getline(std::cin,s);
