@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 00:34:18 by maboulho          #+#    #+#             */
-/*   Updated: 2023/03/19 23:23:42 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/03/21 07:41:46 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(float const _raw) : _raw(roundf(_raw * (1 << Fraction_Bits)))
 Fixed::Fixed(const Fixed &_obj)
 {
     std::cout << "Copy constructor called" << std::endl;
-    this->_raw = _obj.getRawBits(); 
+    *this = _obj;
 }
 Fixed& Fixed::operator=(Fixed const& _obj)
 {

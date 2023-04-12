@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 00:43:59 by maboulho          #+#    #+#             */
-/*   Updated: 2023/02/23 13:20:34 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/03/20 04:53:16 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie(std::string name)
 }
 Zombie::Zombie()
 {
-     this->name = "null";
+    this->name = "null";
     std::cout << "Zombie object " << this->name << " created" << std::endl;
 }
 

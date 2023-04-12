@@ -14,10 +14,11 @@ public:
     Fixed(const Fixed &_obj);
     Fixed& operator=(Fixed const& _obj);
     ~Fixed();
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
-    float toFloat( void ) const;
-    int toInt( void ) const;
+
+    int     getRawBits( void ) const;
+    void    setRawBits( int const raw );
+    float   toFloat( void ) const;
+    int     toInt( void ) const;
 
     
 };

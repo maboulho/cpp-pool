@@ -54,6 +54,7 @@
         "fstream": "cpp",
         "__split_buffer": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "cmath": "cpp"
     }
 }

@@ -14,6 +14,29 @@ public:
     Fixed(const Fixed &_obj);
     Fixed& operator=(Fixed const& _obj);
     ~Fixed();
+
+    bool operator>(Fixed const& _obj)const;
+    bool operator<(Fixed const& _obj)const;
+    bool operator>=(Fixed const& _obj)const;
+    bool operator<=(Fixed const& _obj)const;
+    bool operator==(Fixed const& _obj)const;
+    bool operator!=(Fixed const& _obj)const;
+
+    Fixed operator+(const Fixed& _obj)const;
+    Fixed operator-(const Fixed& _obj)const;
+    Fixed operator*(const Fixed& _obj)const;
+    Fixed operator/(const Fixed& _obj)const;
+
+    Fixed& operator++();
+    Fixed& operator--();
+    Fixed operator++(int);
+    Fixed operator--(int);
+
+    static Fixed& min(Fixed& _obj1, Fixed& _obj2);
+    static Fixed& max(Fixed& _obj1, Fixed& _obj2);
+    static Fixed const& min(Fixed const& _obj1, Fixed const& _obj2);
+    static Fixed const& max(Fixed const& _obj1, Fixed const& _obj2);
+
     int getRawBits( void ) const;
     void setRawBits( int const raw );
     float toFloat( void ) const;
