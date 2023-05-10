@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:22:20 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/05 13:26:20 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/05/08 08:03:32 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,38 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat &obj)
     return o;
 }
 
+void Bureaucrat::signForm(AForm &form)
+{
+    try
+    { 
+        form.beSigned(*this);
+        std::cout << this->Name << " signs " << form.getName() << std::endl;
+    }
+    catch(AForm::GradeTooLowException& e)
+    {
+        std::cerr << this->Name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->Name << " executes " << form.getName() << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cerr << this->Name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade is too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade is too low";
+}

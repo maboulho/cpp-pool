@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 01:11:13 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/05 13:27:24 by maboulho         ###   ########.fr       */
+/*   Created: 2023/05/07 03:05:50 by maboulho          #+#    #+#             */
+/*   Updated: 2023/05/07 03:20:00 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main( void )
 {
+
     try {
-        Bureaucrat bureaucrat("ash", 0);
+        Bureaucrat bureaucrat("ash",11);
+        Form form("formName", 10);
 
-        std::cout << bureaucrat << std::endl;
+        bureaucrat.signForm(form);
 
-        //bureaucrat.incrementGrade();
-         bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
+        std::cout << form << std::endl;
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }

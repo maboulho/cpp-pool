@@ -6,7 +6,7 @@
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:22:20 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/05 13:26:20 by maboulho         ###   ########.fr       */
+/*   Updated: 2023/05/07 03:03:49 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,15 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat &obj)
     return o;
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    { 
+        form.beSigned(*this);
+        std::cout << this->Name << " signs " << form.getName() << std::endl;
+    }
+    catch(Form::GradeTooLowException& e)
+    {
+        std::cerr << this->Name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
