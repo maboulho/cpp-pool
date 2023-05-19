@@ -55,6 +55,17 @@
         "__split_buffer": "cpp",
         "deque": "cpp",
         "stack": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "array": "cpp",
+        "complex": "cpp",
+        "optional": "cpp",
+        "sstream": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp"
     }
 }

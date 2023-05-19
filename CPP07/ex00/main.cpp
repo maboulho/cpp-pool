@@ -5,34 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:43:49 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/10 21:50:37 by maboulho         ###   ########.fr       */
+/*   Created: 2023/05/11 11:43:26 by maboulho          #+#    #+#             */
+/*   Updated: 2023/05/11 11:57:48 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
-#include <stdint.h>
+#include"Whatever.hpp"
+#include<iostream>
 
-uintptr_t serialize(Data* ptr)
-{
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-Data* deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-int main( void )
-{
-    Data *data = new Data;
-
-    data->name = "maboulho";
-    data->age = 24;
-
-    std::cout << "Name: " << serialize(data) << std::endl;
-    std::cout << "Age: " << deserialize( serialize( data ) )->age << std::endl;
-	std::cout << "Name: " << deserialize( serialize( data ) )->name << std::endl;
-    delete data;
-
-    return 0;
+int main( void ) {
+int a = 2;
+int b = 3;
+swap( a, b );
+std::cout << "a = " << a << ", b = " << b << std::endl;
+std::cout << "min( a, b ) = " << min( a, b ) << std::endl;
+std::cout << "max( a, b ) = " << max( a, b ) << std::endl;
+std::string c = "chaine1";
+std::string d = "chaine2";
+swap(c, d);
+std::cout << "c = " << c << ", d = " << d << std::endl;
+std::cout << "min( c, d ) = " << min( c, d ) << std::endl;
+std::cout << "max( c, d ) = " << max( c, d ) << std::endl;
+return 0;
 }

@@ -5,34 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:43:49 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/10 21:50:37 by maboulho         ###   ########.fr       */
+/*   Created: 2023/05/11 12:02:27 by maboulho          #+#    #+#             */
+/*   Updated: 2023/05/11 17:42:35 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
-#include <stdint.h>
+#include"Iter.hpp"
 
-uintptr_t serialize(Data* ptr)
+int main()
 {
-    return (reinterpret_cast<uintptr_t>(ptr));
+    char arr[] ={'1','3','4','4','4'};
+    int arr2[] ={1,3,4,4,4};
+    iter(arr,5,print);
+    iter(arr2,5,print);
+    iter(arr,5,add);
+    iter(arr2,5,add);
 }
 
-Data* deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-int main( void )
-{
-    Data *data = new Data;
-
-    data->name = "maboulho";
-    data->age = 24;
-
-    std::cout << "Name: " << serialize(data) << std::endl;
-    std::cout << "Age: " << deserialize( serialize( data ) )->age << std::endl;
-	std::cout << "Name: " << deserialize( serialize( data ) )->name << std::endl;
-    delete data;
-
-    return 0;
-}

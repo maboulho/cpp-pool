@@ -5,34 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maboulho <maboulho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:43:49 by maboulho          #+#    #+#             */
-/*   Updated: 2023/05/10 21:50:37 by maboulho         ###   ########.fr       */
+/*   Created: 2023/05/13 00:32:36 by maboulho          #+#    #+#             */
+/*   Updated: 2023/05/13 02:37:30 by maboulho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
-#include <stdint.h>
+#include "Span.hpp"
 
-uintptr_t serialize(Data* ptr)
+int main()
 {
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
+Span sp = Span(5);
+sp.addNumber(6);
+sp.addNumber(3);
+sp.addNumber(17);
+sp.addNumber(-2147483648);
+sp.addNumber(2147483647);
+std::cout << sp.shortestSpan() << std::endl;
+std::cout << sp.longestSpan() << std::endl;
 
-Data* deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-int main( void )
-{
-    Data *data = new Data;
+Span sp2 = Span(10000);
+std::vector<int> v(10000, 0);
+for (int i = 0; i < 10000; i++)
+    v[i] = i;
+sp2.addNumber(v.begin(), v.end());
+std::cout << sp2.shortestSpan() << std::endl;
+std::cout << sp2.longestSpan() << std::endl;
 
-    data->name = "maboulho";
-    data->age = 24;
-
-    std::cout << "Name: " << serialize(data) << std::endl;
-    std::cout << "Age: " << deserialize( serialize( data ) )->age << std::endl;
-	std::cout << "Name: " << deserialize( serialize( data ) )->name << std::endl;
-    delete data;
-
-    return 0;
+return 0;
 }

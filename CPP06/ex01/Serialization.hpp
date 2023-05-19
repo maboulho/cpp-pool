@@ -6,7 +6,8 @@
 
 typedef struct s_Data
 {
-    std::string	data;
+    std::string	name;
+    int			age;
 }				Data;
 
 #endif
